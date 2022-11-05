@@ -21,7 +21,12 @@ $db_list = mysqli_query($link, "SHOW DATABASES");
 
 if ($db_list->num_rows > 0) {
     while($row = $db_list->fetch_assoc()) {
-        echo $row["Database"] . "<br>";
+       echo  $row["Database"] . "<br>";
+       $os = $row["Database"];
+    }
+
+    if (in_array("php", )) {
+        echo 'true';
     }
 } else {
     echo "0 results";
@@ -29,6 +34,5 @@ if ($db_list->num_rows > 0) {
 
 $link->close();
 ?>
-    
 </body>
 </html>
