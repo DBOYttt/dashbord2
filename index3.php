@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "w3shools";
+$dbname = "w3schools";
 
 
 // Create connection

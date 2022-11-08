@@ -25,14 +25,14 @@ if ($db_list->num_rows > 0) {
     while($row = $db_list->fetch_assoc()) {
        echo  $row["Database"] . "<br>";
        $os = $row["Database"];
-       $my_arr = array_push($my_arr, $os);
+       array_push($my_arr, $os);
     }
 
 
-    
 
-    if (in_array("w3shools", $os)) {
-        echo 'true';
+
+    if (in_array("w3schools", $my_arr)) {
+        echo '<br>' . 'true';
     }
 } else {
     echo "0 results";
