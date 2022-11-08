@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+</html>
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -17,7 +28,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-echo '<button><a href = "index2.html">back<a></button>';
+echo '<button class = "button3"><a href = "index2.html">back<a></button>';
+echo '<div class = "group3">';
 echo "<table border=\"1\">";
 echo  "<td>" . "CategoryID" . "</tb>";
 echo  "<td>" . "CategoryName" . "</tb>";
@@ -26,6 +38,7 @@ echo  "<td>" . "Description" . "</tb>" . "<tr>";
     echo  "<td>" . $row["CategoryID"] . "</tb>";
     echo  "<td>" . $row["CategoryName"] . "</tb>";
     echo  "<td>" . $row["Description"] . "</tb>" . "<tr>";
+    echo "</div>";
   }
 } else {
   echo "0 results";

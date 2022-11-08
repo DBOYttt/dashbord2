@@ -30,7 +30,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  echo '<button class = "button2"><a href = "index2.html">back<a></button>';
+  echo '<a href = "index2.html"><button class = "button3">back</button></a>';
+  echo '<div class = "group2">';
   echo "<head>" . '<meta charset="UTF-8">' . "</head>";
   echo "<table border=\"1\">";
   echo  "<td>" . "CustomerID" . "</tb>";
@@ -48,6 +49,7 @@ if ($result->num_rows > 0) {
     echo  "<td>" . $row["PostalCode"] . "</tb>";
     echo  "<td>" . $row["City"] . "</tb>";
     echo  "<td>" . $row["Country"] . "</tb>" . "</tr>";
+    echo '</div>';
   //   echo "<table border=\"1\">";
   //   echo '<td>' . "CustomerID"  . $row["CustomerID"] . '</td>' . '<td>' . "CustomerName: " . '</td>' . '<td>' . $row["CustomerName"] . '</td>'. '<td>' . "contactName: " . '</td>' . '<td>' . $row["ContactName"] . '</td>'. '<td>' . "Address: " . '</td>' . '<td>' . $row["Address"] . '</td>'. '<td>' . "City: " . '</td>' . '<td>' . $row["City"]. "PostalCode: " . '</td>' . '<td>' . $row["PostalCode"]. "Country: " . '</td>' . '<td>' . $row["Country"];
   //   echo "</table>";

@@ -1,4 +1,4 @@
-button {
+.button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -7,10 +7,15 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 25px;
+    border-radius: 10px;
+    width: 500px;
   }
 
-button2 {
+.button:hover {
+    background-color: #06800c;
+}
+
+.button2 {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -19,8 +24,56 @@ button2 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 5px;
+  }
+.button3 {
+    top: 10px;
+    background-color: #2a2b2a;
+    color: white;
+    border: none;
+    left: 700px;
+    padding: 15px 32px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 500px;
+  }
+.button3:hover {
+    background-color: #111111;
+  }
+.button3:active {
+    border: 4px solid #06800c;
   }
 
+.group1 {
+    position: absolute;
+    border: none;
+    top: 100px;
+    left: 700px;
+
+
+}
+
+.group2 {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+
+.group3 {
+    position: absolute;
+    top: 100px;
+    left: 625px;
+}
+
+.group4 {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    right: 150px;
+}
 a {
     color: white;
     text-decoration: none;
