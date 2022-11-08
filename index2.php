@@ -33,16 +33,16 @@ if ($result->num_rows > 0) {
   echo '<a href = "index2.html"><button class = "button3">back</button></a>';
   echo '<div class = "group2">';
   echo "<head>" . '<meta charset="UTF-8">' . "</head>";
-  echo "<table border=\"1\">";
-  echo  "<td>" . "CustomerID" . "</tb>";
-  echo  "<td>" . "CustomerName" . "</tb>";
-  echo  "<td>" . "ContactName" . "</tb>";
-  echo  "<td>" . "Address" . "</tb>";
-  echo  "<td>" . "PostalCode" . "</tb>";
-  echo  "<td>" . "City" . "</tb>";
-  echo  "<td>" . "Country" . "</tb>" . "<tr>";
+  echo '<table class = "table">';
+  echo  "<tr>" . "<th>" . "CustomerID" . "</th>";
+  echo  "<th>" . "CustomerName" . "</th>";
+  echo  "<th>" . "ContactName" . "</th>";
+  echo  "<th>" . "Address" . "</th>";
+  echo  "<th>" . "PostalCode" . "</th>";
+  echo  "<th>" . "City" . "</th>";
+  echo  "<th>" . "Country" . "</th>" . "</tr>";
   while($row = $result->fetch_assoc()) {
-    echo  "<td>" . $row["CustomerID"] . "</tb>";
+    echo  "<tr>" . "<td>" . $row["CustomerID"] . "</tb>";
     echo  "<td>" . $row["CustomerName"] . "</tb>";
     echo  "<td>" . $row["ContactName"] . "</tb>";
     echo  "<td>" . $row["Address"] . "</tb>";

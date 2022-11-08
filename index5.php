@@ -30,12 +30,12 @@ if ($result->num_rows > 0) {
   // output data of each row
 echo '<a href = "index2.html"><button class = "button3">back</button></a>';
 echo '<div class = "orders">';
-echo "<table border=\"1\">";
-echo  "<td>" . "OrderID " . "</tb>";
-echo  "<td>" . "CustomerID" . "</tb>";
-echo  "<td>" . "EmployeeID" . "</tb>";
-echo  "<td>" . "OrderDate" . "</tb>";
-echo  "<td>" . "ShipperID" . "</tb>" . "<tr>";
+echo '<table class = "table">';
+echo  "<th>" . "OrderID " . "</th>";
+echo  "<th>" . "CustomerID" . "</th>";
+echo  "<th>" . "EmployeeID" . "</th>";
+echo  "<th>" . "OrderDate" . "</th>";
+echo  "<th>" . "ShipperID" . "</th>" . "<tr>";
   while($row = $result->fetch_assoc()) {
     echo  "<td>" . $row["OrderID"] . "</tb>";
     echo  "<td>" . $row["CustomerID"] . "</tb>";
