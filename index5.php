@@ -28,7 +28,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-echo '<button><a href = "index2.html">back<a></button>';
+echo '<a href = "index2.html"><button class = "button3">back</button></a>';
+echo '<div class = "orders">';
 echo "<table border=\"1\">";
 echo  "<td>" . "OrderID " . "</tb>";
 echo  "<td>" . "CustomerID" . "</tb>";
@@ -41,6 +42,7 @@ echo  "<td>" . "ShipperID" . "</tb>" . "<tr>";
     echo  "<td>" . $row["EmployeeID"] . "</tb>";
     echo  "<td>" . $row["OrderDate"] . "</tb>";
     echo  "<td>" . $row["ShipperID"] . "</tb>" . "<tr>";
+    echo '</div>';
   }
 } else {
   echo "0 results";

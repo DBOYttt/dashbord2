@@ -28,7 +28,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-echo '<button class = "button3"><a href = "index2.html">back<a></button>';
+echo '<a href = "index2.html"><button class = "button3">back</button><a>';
 echo '<div class = "group3">';
 echo "<table border=\"1\">";
 echo  "<td>" . "CategoryID" . "</tb>";
