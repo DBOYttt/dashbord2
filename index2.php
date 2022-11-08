@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "php";
+$dbname = "w3shools";
 
 
 // Create connection
