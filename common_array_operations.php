@@ -24,7 +24,12 @@
                  echo $row['table_name'] . '<br>';
             }
         }
-        echo "<br>";
+
+        if (in_array($my_arr[$x], $my_arr)) {
+             echo 'true';
+         }
+
+        echo "<br>" . "<br>";
         unset($my_arr[$x]);
     }
 ?>
