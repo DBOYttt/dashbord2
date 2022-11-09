@@ -33,7 +33,6 @@ echo "</div>";
 
     $common = count($my_arr);
 
-    echo $common;
 
     // for($i = $common; $i > 0 ; $i--){
         
