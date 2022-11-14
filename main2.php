@@ -39,7 +39,7 @@ function button() {
             $dbname = $my_arr[$x];
 
 
-            echo  '<a href="'.$dbname.'">' . '<button class="button" id="'.$dbname.'">' . $dbname . '</button></a>' . "<br>" . "<br>";
+            echo  '<a href="'.$dbname.'">' . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
             
             unset($my_arr[$x]);
         }
