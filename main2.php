@@ -21,15 +21,34 @@ function button() {
         $link = new mysqli($servername, $username, $password);
         $db_list = mysqli_query($link, "SHOW DATABASES");
 
+        $my_arr = array();
+
     if ($db_list->num_rows > 0) {
     echo "<div class = 'group1'>";
         while($row = $db_list->fetch_assoc()) {
-        echo  '<a href="'.$hbsd.'">' . '<button class="button">' . $row["Database"] . '</button></a>' . "<br>" . "<br>";
+        
+        $os = $row["Database"];
+        array_push($my_arr, $os);
+
+        $common = count($my_arr);
+        
+    }  
+
+        for($x = 0; $x <= ($common - 1) ; $x++) {
+            
+            $dbname = $my_arr[$x];
+
+
+            echo  '<a href="'.$dbname.'">' . '<button class="button" id="'.$dbname.'">' . $dbname . '</button></a>' . "<br>" . "<br>";
+            
+            unset($my_arr[$x]);
+        }
+        
 
         }
     echo "</div>";
     }
-}
+
 
 button();
 ?>
