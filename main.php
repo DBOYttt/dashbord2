@@ -30,7 +30,11 @@ echo "<div class = 'group1'>";
        array_push($my_arr, $os);
     }
 echo "</div>";
-    include 'common_array_operations.php';  
+    
+
+
+
+include 'common_array_operations.php';  
 
     // if (in_array("w3schools", $my_arr)) {
     //     echo '<a href="index2.html"><button class="button3" href = "index.html">w3shools</button></a>';
