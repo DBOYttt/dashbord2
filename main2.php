@@ -14,9 +14,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
-function button() {
     
-        global $servername, $username, $password;
 
         $link = new mysqli($servername, $username, $password);
         $db_list = mysqli_query($link, "SHOW DATABASES");
@@ -78,18 +76,44 @@ function button() {
 
             $filename_prefix = $dbname;
             $filename_extn   = 'php';
-            $file_to_include = include "template.txt";
+            
 
             $filename = $filename_prefix.'.'.$filename_extn;
 
 
+            $current = file_get_contents($filename);
 
-            if( file_exists( $filename ) ){
-                # Handle the Error Condition
-               }else{
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/tmp";
-                 file_put_contents($path , $filename , 0, $file_to_include);
-               }
+
+
+            file_put_contents($filename, $current);
+
+            $current = file_get_contents($filename);
+
+            $current .= "<?php" . "\n";
+            $current .= '$servername = "localhost";' . "\n";
+            $current .= '$username = "root";'. "\n";
+            $current .= '$password = "";'. "\n";
+            $current .= 'global $dbname;'. "\n";
+            $current .= '$link = new mysqli($servername, $username, $password, $dbname);'. "\n";
+            $current .= '$db_list = mysqli_query($link, "SHOW DATABASES");'. "\n";
+            $current .= "echo" . " " . '"' . "<div class =" .  "'group1'>" . '"'.  ";" . "\n";
+            $current .= 'while($row = $db_list->fetch_assoc()) {'. "\n";
+            $current .= '$os = $row["Database"];'. "\n";
+            $current .= 'array_push($my_arr, $os);'. "\n";
+            $current .= '$common = count($my_arr);'. "\n";
+            $current .= '}'. "\n";
+            $current .= '}'. "\n";
+            $current .= 'if ($link->connect_error) {'. "\n";
+            $current .= 'die("Connection failed: " . $link->connect_error);'. "\n";
+            $current .= '}'. "\n";
+            $current .= '$db_list = mysqli_query($link, "SELECT table_name FROM information_schema.tables' . 'WHERE table_schema = "$dbname");'. "\n";
+            $current .= 'if ($db_list->num_rows > 0) {'. "\n";
+            $current .= 'echo $row["table_name"] . "<br>";'. "\n";
+            $current .= '}'. "\n";
+            $current .= '}'. "\n";
+            $current .= '?>' . "\n";
+
+            file_put_contents($filename, $current);
 
             echo  '<a href="'.$dbname.'.php">' . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
             
@@ -99,10 +123,6 @@ function button() {
 
         }
     echo "</div>";
-    }
-
-
-button();
 ?>
 </body>
 
