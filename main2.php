@@ -34,42 +34,42 @@ function button() {
         
     }  
 
-    $tx = <<<TX
+    // start
     
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        global $dbname;
+        // $servername = "localhost";
+        // $username = "root";
+        // $password = "";
+        // global $dbname;
 
 
-        $link = new mysqli($servername, $username, $password, $dbname);
+        // $link = new mysqli($servername, $username, $password, $dbname);
 
-        $db_list = mysqli_query($link, "SHOW DATABASES");
+        // $db_list = mysqli_query($link, "SHOW DATABASES");
 
-        if ($db_list->num_rows > 0) {
-            echo "<div class = 'group1'>";
-                while($row = $db_list->fetch_assoc()) {
+        // if ($db_list->num_rows > 0) {
+        //     echo "<div class = 'group1'>";
+        //         while($row = $db_list->fetch_assoc()) {
                 
-                $os = $row["Database"];
-                array_push($my_arr, $os);
+        //         $os = $row["Database"];
+        //         array_push($my_arr, $os);
         
-                $common = count($my_arr);
+        //         $common = count($my_arr);
                 
-            }  
-        }
+        //     }  
+        // }
 
-        if ($link->connect_error) {
-            die("Connection failed: " . $link->connect_error);
-          }
+        // if ($link->connect_error) {
+        //     die("Connection failed: " . $link->connect_error);
+        //   }
 
-          $db_list = mysqli_query($link, "SELECT table_name FROM information_schema.tables WHERE table_schema = '$dbname'");
+        //   $db_list = mysqli_query($link, "SELECT table_name FROM information_schema.tables WHERE table_schema = '$dbname'");
 
-          if ($db_list->num_rows > 0) {
-            while($row = $db_list->fetch_assoc()) {
-                 echo $row['table_name'] . '<br>';
-            }
-        } 
-        TX;
+        //   if ($db_list->num_rows > 0) {
+        //     while($row = $db_list->fetch_assoc()) {
+        //          echo $row['table_name'] . '<br>';
+        //     }
+        // } 
+    // end
 
 
         for($x = 0; $x <= ($common - 1) ; $x++) {
@@ -78,6 +78,7 @@ function button() {
 
             $filename_prefix = $dbname;
             $filename_extn   = 'php';
+            $file_to_include = include "template.txt";
 
             $filename = $filename_prefix.'.'.$filename_extn;
 
@@ -86,10 +87,11 @@ function button() {
             if( file_exists( $filename ) ){
                 # Handle the Error Condition
                }else{
-                 file_put_contents( $filename , $tx);
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/tmp";
+                 file_put_contents($path , $filename , 0, $file_to_include);
                }
 
-            echo  '<a href="'.$dbname.'">' . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
+            echo  '<a href="'.$dbname.'.php">' . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
             
             unset($my_arr[$x]);
         }
