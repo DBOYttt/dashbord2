@@ -96,6 +96,7 @@ $password = "";
             $current .= 'global $dbname;'. "\n";
             $current .= '$link = new mysqli($servername, $username, $password, $dbname);'. "\n";
             $current .= '$db_list = mysqli_query($link, "SHOW DATABASES");'. "\n";
+            $current .= 'if ($db_list->num_rows > 0) {' . "\n";
             $current .= "echo" . " " . '"' . "<div class =" .  "'group1'>" . '"'.  ";" . "\n";
             $current .= 'while($row = $db_list->fetch_assoc()) {'. "\n";
             $current .= '$os = $row["Database"];'. "\n";
