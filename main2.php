@@ -71,7 +71,7 @@ $password = "";
 
 function file_and_button_generation() {
     
-    // error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
 
     $dir_to_save = "tmp/";
         if (!is_dir($dir_to_save)) {
