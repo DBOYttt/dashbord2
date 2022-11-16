@@ -71,7 +71,12 @@ $password = "";
 
 function file_and_button_generation() {
     
-    error_reporting(E_ERROR | E_PARSE);
+    // error_reporting(E_ERROR | E_PARSE);
+
+    $dir_to_save = "tmp/";
+        if (!is_dir($dir_to_save)) {
+            mkdir($dir_to_save);
+        }
 
     global $common;
     global $my_arr;
@@ -86,15 +91,17 @@ function file_and_button_generation() {
 
             $filename = $filename_prefix.'.'.$filename_extn;
 
-            unlink($filename);
+            unlink($dir_to_save . $filename);
 
-            $current = file_get_contents($filename);
+            $current = file_get_contents( $dir_to_save . $filename);
 
-            file_put_contents($filename, $current); 
+            file_put_contents( $dir_to_save . $filename, $current); 
 
 
-            $current .= '<link rel="stylesheet" href="style.css">' . "\n";
-            $current .= '<a href="main2.php"><button class="button3">back</button></a>';
+
+
+            $current .= '<link rel="stylesheet" href="../style.css">' . "\n";
+            $current .= '<a href="../main2.php"><button class="button3">back</button></a>';
             $current .= "<?php" . "\n";
             $current .= '$servername = "localhost";' . "\n";
             $current .= '$username = "root";'. "\n";
@@ -130,12 +137,12 @@ function file_and_button_generation() {
 
             
             
-            file_put_contents($filename, $current);
+            file_put_contents( $dir_to_save . $filename, $current);
             
 
             
 
-            echo  '<a href="'.$dbname.'.php">' . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
+            echo  "<a href='$dir_to_save".$dbname.".php'>" . '<button class="button">' . $dbname . '</button></a>' . "<br>" . "<br>";
             
             unset($my_arr[$x]);
 
