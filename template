@@ -41,7 +41,13 @@
 
         file_put_contents( $dir_to_save . $filename, $current); 
         
-        $current .= "<a>7570</a>";
+        $current .= '<link rel="stylesheet" href="../style.css">' . "\n";
+        $current .= '<a href="../'.$dbname.'"><button class="button3">back</button></a>' . "\n";
+        $current .= "<?php" . "\n";
+        $current .= '$servername = "localhost";' . "\n";
+        $current .= '$username = "root";' . "\n";
+        $current .= '$password = "";' . "\n";
+        
 
         file_put_contents( $dir_to_save . $filename, $current);
         
