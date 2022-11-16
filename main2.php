@@ -32,43 +32,6 @@ $password = "";
         
     }  
 
-    // start
-    
-        // $servername = "localhost";
-        // $username = "root";
-        // $password = "";
-        // global $dbname;
-
-
-        // $link = new mysqli($servername, $username, $password, $dbname);
-
-        // $db_list = mysqli_query($link, "SHOW DATABASES");
-
-        // if ($db_list->num_rows > 0) {
-        //     echo "<div class = 'group1'>";
-        //         while($row = $db_list->fetch_assoc()) {
-                
-        //         $os = $row["Database"];
-        //         array_push($my_arr, $os);
-        
-        //         $common = count($my_arr);
-                
-        //     }  
-        // }
-
-        // if ($link->connect_error) {
-        //     die("Connection failed: " . $link->connect_error);
-        //   }
-
-        //   $db_list = mysqli_query($link, "SELECT table_name FROM information_schema.tables WHERE table_schema = '$dbname'");
-
-        //   if ($db_list->num_rows > 0) {
-        //     while($row = $db_list->fetch_assoc()) {
-        //          echo $row['table_name'] . '<br>';
-        //     }
-        // } 
-    // end
-
 function file_and_button_generation() {
     
     error_reporting(E_ERROR | E_PARSE);
@@ -107,20 +70,9 @@ function file_and_button_generation() {
             $current .= '$username = "root";'. "\n";
             $current .= '$password = "";'. "\n";
             $current .= '$link = new mysqli($servername, $username, $password);'. "\n";
-            $current .= '$db_list = mysqli_query($link, "SHOW DATABASES");'. "\n";
             $current .= '$my_arr = array();' . "\n";
-            $current .= 'if ($db_list->num_rows > 0) {' . "\n";
-            $current .= "echo" . " " . '"' . "<div class =" .  "'group1'>" . '"'.  ";" . "\n";
-            $current .= 'while($row = $db_list->fetch_assoc()) {'. "\n";
-            $current .= '$os = $row["Database"];'. "\n";
-            $current .= 'array_push($my_arr, $os);'. "\n";
-            $current .= '$common = count($my_arr);'. "\n";
-            $current .= '}'. "\n";
-            $current .= '}'. "\n";
-            $current .= 'for($x = 0; $x <= ($common - 1) ; $x++) {    
-                            $dbname = $my_arr[$x];'. "\n";
-            $current .= "}" . "\n";
-            $current .= '$link = new mysqli($servername, $username, $password, $dbname);'. "\n";
+            $current .= '$db_list = mysqli_query($link, "SHOW DATABASES");'. "\n";
+            $current .= '$link = new mysqli($servername, $username, $password);'. "\n";
             $current .= 'if ($link->connect_error) {'. "\n";
             $current .= 'die("Connection failed: " . $link->connect_error);
                             }'. "\n";
@@ -129,7 +81,7 @@ function file_and_button_generation() {
             $current .= 'while($row = $db_list->fetch_assoc()) {'. "\n";
             $current .= 'echo' .  '"<div class =' . "'group'>" . '"' . ";" . "\n";
             $current .= 'echo' . " " . "'<br>';" . "\n";
-            $current .= "echo" . " " . "'<button class =" . "button" . ">' . " . '$row' . "['table_name'] . '<br>'". ". '</button>';" . "\n";
+            $current .= "echo" . " " . "'<button class =" . "button" . " href =" .'"'. $dbname . '2' . '.php' . '"'. ">' . " . '$row' . "['table_name'] . '<br>'". ". '</button>';" . "\n";
             $current .= 'echo "</div>";'. "\n";
             $current .= "}" . "\n";
             $current .= "}" . "\n";
