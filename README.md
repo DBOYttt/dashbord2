@@ -18,8 +18,12 @@
 
 
 ## Demo
+![image](https://user-images.githubusercontent.com/65898012/202465208-b9a379b5-dc7c-4567-a7ec-61d9f0f24657.png)
 
-Insert gif or link to demo
+<br>
+
+![image](https://user-images.githubusercontent.com/65898012/202465078-fa55ac0a-319a-41b4-81b9-5030a43174cf.png)
+
 
 
 ## Installation
