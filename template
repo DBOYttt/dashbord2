@@ -47,6 +47,14 @@
         $current .= '$servername = "localhost";' . "\n";
         $current .= '$username = "root";' . "\n";
         $current .= '$password = "";' . "\n";
+        $current .= '$dbname = "'.$dbname.'";' . "\n";
+        $current .= '$conn = new mysqli($servername, $username, $password, $dbname);' . "\n";
+        $current .= 'if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }' . "\n";
+        $current .= '$sql = "SELECT * FROM `'.$tbname.'`"; '."\n".' 
+                    $result = $conn->query($sql);' . "\n";
+        $current .= 'if ($result->num_rows > 0) {}' . "\n";
         
 
         file_put_contents( $dir_to_save . $filename, $current);
