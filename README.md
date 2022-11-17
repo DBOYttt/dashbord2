@@ -1,10 +1,6 @@
 
 # Copy of phpmyadmin
 
-
-
-
- - [Official project from AngularsCoding](https://github.com/AngularsCoding/Car-Game)
  - [Author](https://github.com/DBOYttt)
 
 ## Assumptions
